@@ -349,7 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_JumpForce: 2750
   m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 1.5
+  m_MovementSmoothing: 0.75
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2

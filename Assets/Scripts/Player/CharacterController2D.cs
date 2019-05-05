@@ -69,7 +69,12 @@ public class CharacterController2D : MonoBehaviour
         {
             onWallFront = true;
             if(!wasOnWallFront)
+            {
                 doubleJump = true;
+                Flip();
+            }
+                
+
         }
 
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
@@ -139,11 +144,14 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 
-
+            float smoothing = m_MovementSmoothing;
+            //if in the air, less acceleration
+            if (!m_Grounded)
+                smoothing = m_MovementSmoothing * 2;
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
-			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, smoothing);
 
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_FacingRight)
