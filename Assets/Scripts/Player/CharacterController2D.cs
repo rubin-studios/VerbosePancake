@@ -147,7 +147,7 @@ public class CharacterController2D : MonoBehaviour
             float smoothing = m_MovementSmoothing;
             //if in the air, less acceleration
             if (!m_Grounded)
-                smoothing = m_MovementSmoothing * 2;
+                smoothing = m_MovementSmoothing * 4;
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
