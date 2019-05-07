@@ -191,6 +191,14 @@ public class CharacterController2D : MonoBehaviour
             {
                 doubleJump = false;
                 Vector2 v = GetComponent<Rigidbody2D>().velocity;
+
+                //This code adds horizontal force for double jumping
+
+                //if (move < 0 && v.x > 0)
+                //    m_Rigidbody2D.AddForce(new Vector2(m_JumpForce*-1f, 0f));
+                //if (move > 0 && v.x < 0)
+                //    m_Rigidbody2D.AddForce(new Vector2(m_JumpForce*1f, 0f));
+               
                 v.y = 3f;
                 GetComponent<Rigidbody2D>().velocity = v;
             }

@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - Spells
   - 
   - 
   - 
@@ -47,6 +47,12 @@ TagManager:
   - name: Player
     uniqueID: 1471715891
     locked: 0
+  - name: Spells
+    uniqueID: 3861415239
+    locked: 0
   - name: Foreground
     uniqueID: 1053231507
+    locked: 0
+  - name: New Layer
+    uniqueID: 1612794953
     locked: 0
