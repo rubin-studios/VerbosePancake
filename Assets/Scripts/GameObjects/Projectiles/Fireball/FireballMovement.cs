@@ -15,13 +15,12 @@ public class FireballMovement : MonoBehaviour
     {
         //ignore collisions with self
         GameObject player = GameObject.Find("Player");
-        Physics2D.IgnoreCollision(selfCollider, player.GetComponent<BoxCollider2D>());
-        Physics2D.IgnoreCollision(selfCollider, player.GetComponent<CircleCollider2D>());
+        Physics2D.IgnoreCollision(selfCollider, player.GetComponent<CapsuleCollider2D>());
 
         // add recoil to the player
         playerRigidBody = player.GetComponent<Rigidbody2D>();
         Vector2 v = transform.right * bulletSpeed;
-        v = v * -15f;
+        v = v * -30f;
         playerRigidBody.AddForce(v);
 
     }

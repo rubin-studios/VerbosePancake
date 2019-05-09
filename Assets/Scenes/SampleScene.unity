@@ -208,7 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 64759365}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 316029928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 1024
   m_GroundCheck: {fileID: 1218956742}
   m_CeilingCheck: {fileID: 64759365}
   m_CrouchDisableCollider: {fileID: 0}
@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 475798531}
   - component: {fileID: 475798530}
   - component: {fileID: 475798529}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2289,7 +2289,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.4018583
+  orthographic size: 3.6126623
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2332,7 +2332,7 @@ GameObject:
   - component: {fileID: 957096915}
   - component: {fileID: 957096918}
   - component: {fileID: 957096917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Aiming
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2556,7 +2556,7 @@ GameObject:
   - component: {fileID: 1080387018}
   - component: {fileID: 1080387020}
   - component: {fileID: 1080387019}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12794,7 +12794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1184618376}
   - component: {fileID: 1184618375}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12838,7 +12838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1218956742}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

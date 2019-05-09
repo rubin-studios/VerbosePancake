@@ -56,8 +56,8 @@ public class CharacterController2D : MonoBehaviour
 
         //Using raycasts left and right to detect if touching a wall
         Physics2D.queriesStartInColliders = false;
-        RaycastHit2D m_FrontWallCheck = Physics2D.Raycast(m_GroundCheck.position, Vector2.right * transform.localScale.x, wallCheckDistance);
-        RaycastHit2D m_BackWallCheck = Physics2D.Raycast(m_GroundCheck.position, Vector2.left * transform.localScale.x, wallCheckDistance);
+        RaycastHit2D m_FrontWallCheck = Physics2D.Raycast(m_GroundCheck.position, Vector2.right * transform.localScale.x, wallCheckDistance, m_WhatIsGround);
+        RaycastHit2D m_BackWallCheck = Physics2D.Raycast(m_GroundCheck.position, Vector2.left * transform.localScale.x, wallCheckDistance, m_WhatIsGround);
 
         if (m_BackWallCheck.collider!=null)
         {
