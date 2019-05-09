@@ -28,7 +28,7 @@ public class FireballMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // calculate fireball trajectory
-        myRigidBody.velocity = Vector3.SmoothDamp(myRigidBody.velocity, transform.right * bulletSpeed, ref m_Velocity, 2f);
+        myRigidBody.velocity = Vector3.SmoothDamp(myRigidBody.velocity, transform.right * bulletSpeed, ref m_Velocity, 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
