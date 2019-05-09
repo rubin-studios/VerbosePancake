@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
     {   
         m_Animator.SetBool("Jump", jump); 
         m_Animator.SetBool("Grounded", controller.IsGrounded());
-        Debug.Log("Velocity Y: " + m_Rigidbody2D.velocity.y);
         m_Animator.SetFloat("VelocityY", m_Rigidbody2D.velocity.y);
         m_Animator.SetFloat("Horizontal", horizontalMove);
         m_Animator.SetFloat("VelocityX", Mathf.Abs(m_Rigidbody2D.velocity.x));

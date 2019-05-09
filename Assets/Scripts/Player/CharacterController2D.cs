@@ -56,8 +56,8 @@ public class CharacterController2D : MonoBehaviour
 
         //Using raycasts left and right to detect if touching a wall
         Physics2D.queriesStartInColliders = false;
-        RaycastHit2D m_FrontWallCheck = Physics2D.Raycast(m_GroundCheck.position, Vector2.right * transform.localScale.x, wallCheckDistance, m_WhatIsGround);
-        RaycastHit2D m_BackWallCheck = Physics2D.Raycast(m_GroundCheck.position, Vector2.left * transform.localScale.x, wallCheckDistance, m_WhatIsGround);
+        RaycastHit2D m_FrontWallCheck = Physics2D.Raycast(m_GroundCheck.position, Vector2.right * transform.localScale.x, wallCheckDistance);
+        RaycastHit2D m_BackWallCheck = Physics2D.Raycast(m_GroundCheck.position, Vector2.left * transform.localScale.x, wallCheckDistance);
 
         if (m_BackWallCheck.collider!=null)
         {
@@ -146,7 +146,7 @@ public class CharacterController2D : MonoBehaviour
 
             float smoothing = m_MovementSmoothing;
             //if in the air, less acceleration
-            if (!m_Grounded)
+            if (!m_Grounded && !GetComponent<GrapplingHook>().IsGrappling())
                 smoothing = m_MovementSmoothing * 4;
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
