@@ -91,7 +91,6 @@ public class GrapplingHook : MonoBehaviour
         dj2d.distance = Vector2.Distance(transform.position, hit.point);
     }
 
-
     public void Release()
     {
         m_Grappling = false;

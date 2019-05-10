@@ -59,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         // Move
         if (!hook.IsGrappling())
             controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+
         // controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump, hook.IsGrappling());
 
         jump = false;
