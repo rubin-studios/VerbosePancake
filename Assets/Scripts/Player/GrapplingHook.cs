@@ -16,6 +16,7 @@ public class GrapplingHook : MonoBehaviour
     private bool m_Grappling = false;
     private float horizontalMove = 0f;
 
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -25,8 +26,6 @@ public class GrapplingHook : MonoBehaviour
         dj2d.enabled = false;
         line.enabled = false;
         m_Grappling = false;
-
-        
     }
 
     private void FixedUpdate() {
