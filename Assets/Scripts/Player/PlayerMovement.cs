@@ -57,7 +57,8 @@ public class PlayerMovement : MonoBehaviour
         m_Animator.SetFloat("VelocityX", Mathf.Abs(m_Rigidbody2D.velocity.x));
 
         // Move
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        if (!hook.IsGrappling())
+            controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         // controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump, hook.IsGrappling());
 
         jump = false;

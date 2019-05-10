@@ -6,6 +6,7 @@ public class GrapplingHook : MonoBehaviour
 {
     public float distance;
     public float step;
+    public float force;
     public LineRenderer line;
     public LayerMask mask;
 
@@ -29,20 +30,32 @@ public class GrapplingHook : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if (dj2d.distance > 1f) {
+        if (dj2d.distance > 1f) 
+        {
             dj2d.distance -= step;
         }
         
-        if (m_Grappling) {
-            // TODO apply force on rigid body
+        if (m_Grappling) 
+        {
+            // get normalized vector perpendicular to hook point
+            Vector2 forceDirection = Vector2.Perpendicular(dj2d.connectedAnchor - (Vector2) transform.position);
+            forceDirection.Normalize();
+
+            // apply force
+            if (horizontalMove < 0.1f) 
+            {
+                 rb2d.AddForce(forceDirection * force);
+            }
+            else if (horizontalMove > 0.1f)
+            {
+                rb2d.AddForce(-forceDirection * force);
+            }
         }
     }
 
     // Update is called once per frame
     public void Anchor()
     {   
-        m_Grappling = true;
-
         targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         targetPos.z = 0.0f;
 
@@ -51,6 +64,7 @@ public class GrapplingHook : MonoBehaviour
         // Checks that the object hit is a rigid body
         if (hit.collider != null && hit.collider.gameObject.GetComponent<Rigidbody2D>() != null)
         {
+            m_Grappling = true;
             dj2d.enabled = true;
 
             Vector2 connectPoint = hit.point - new Vector2(hit.collider.transform.position.x, hit.collider.transform.position.y);

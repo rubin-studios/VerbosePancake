@@ -552,6 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 5
   step: 0.02
+  force: 50
   line: {fileID: 1185617139}
   mask:
     serializedVersion: 2
