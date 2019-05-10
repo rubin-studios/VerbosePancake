@@ -536,6 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 327285090}
+  hook: {fileID: 327285095}
   runSpeed: 20
 --- !u!114 &327285095
 MonoBehaviour:

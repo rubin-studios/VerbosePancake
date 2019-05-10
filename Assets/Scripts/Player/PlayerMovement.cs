@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
+    public GrapplingHook hook;
     public float runSpeed = 20f;
 
     private Animator m_Animator;
@@ -29,6 +30,22 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
         }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+           hook.Anchor();
+        }
+        else 
+        {
+            if (Input.GetButton("Fire2")) 
+            {
+                hook.OnGrapple(horizontalMove);
+            }
+            else if (Input.GetButtonUp("Fire2"))
+            {
+                hook.Release();
+            }
+        }
     }
 
     void FixedUpdate()
@@ -41,6 +58,8 @@ public class PlayerMovement : MonoBehaviour
 
         // Move
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        // controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump, hook.IsGrappling());
+
         jump = false;
     }
 }
